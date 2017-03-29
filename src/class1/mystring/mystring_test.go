@@ -51,7 +51,25 @@ func TestEven2(t *testing.T) {
 	for _, c  := range tests {
 		got, e := Iseven2(c.s)
 		if got != c.e && e == nil {
-			t.Errorf("Iseven(%q) == %q, want %q", c.s, got, c.e)
+			t.Errorf("Iseven2(%q) == %q, want %q", c.s, got, c.e)
+		}
+	}
+}
+
+func TestEven3(t *testing.T) {
+	var tests = []struct {
+		s string
+		e bool
+	} {
+		 {"kaushik", false },
+		 {"kavi", true },
+		 {"", true },
+	}
+
+	for _, c  := range tests {
+		got, e := Iseven3(c.s)
+		if got != c.e && e == nil {
+			t.Errorf("Iseven3(%q) == %q, want %q", c.s, got, c.e)
 		}
 	}
 }
