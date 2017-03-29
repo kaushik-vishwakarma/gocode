@@ -43,4 +43,18 @@ func Iseven2 (s string) (bool, error) {
   return false, nil
 }
 
+func Iseven3 (s string) (bool, error) {
+
+  l := Length(s)
+
+  if l == 0 {
+    return false, fmt.Errorf("Iseven3: length of the argument is %d", l)
+  }
+  if l%2 == 0 {
+    return  true, nil
+  }
+  return false, nil
+}
+
+
 

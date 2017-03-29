@@ -29,6 +29,19 @@ func printit2(s string) {
   }
 }
 
+func printit3(s string) {
+
+  if oe, e := mystring.Iseven3(s); e == nil {
+    if oe == true {
+      fmt.Println ("Hello", s, "- Even fellow")
+    } else {
+      fmt.Println ("Hello", s, "- Odd fellow")
+    }
+  } else {
+    fmt.Println("Error ", e)
+  }
+}
+
 
 
 func main() {
@@ -42,5 +55,9 @@ func main() {
   fmt.Println("============t2=================")
   for _, s := range tests {
     printit2(s)
+  }
+  fmt.Println("============t3=================")
+  for _, s := range tests {
+    printit3(s)
   }
 }
