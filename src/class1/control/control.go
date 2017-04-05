@@ -4,7 +4,7 @@ import (
  theFmt "fmt"
 )
 
-func TestA() {
+func TestIfA() {
   var i, j int = 0, 10
   if i < j {
     theFmt.Println("i less than j", i, j)
@@ -15,7 +15,7 @@ func TestA() {
   }
 }
 
-func TestA2() {
+func TestSwitchA() {
   i, j :=  11, 10
   switch {
     case i < j:
@@ -27,7 +27,7 @@ func TestA2() {
   }
 }
 
-func TestB() {
+func TestIfB() {
   var isTrue = false
   if isTrue {
     theFmt.Println("YAY!!!!", isTrue)
@@ -36,7 +36,7 @@ func TestB() {
   }
 }
 
-func TestC() {
+func TestSwitchB() {
   var t interface{}
   i := 10
   t = &i
@@ -57,19 +57,38 @@ func TestC() {
   }
 }
 
+func TestSwitchC () {
+ // op := "saturday"
+ // op := "some"
+  op := "monday"
+
+  switch op {
+    case "saturday":
+      fallthrough
+    case "sunday":
+      theFmt.Println("Holiday")
+    case "monday", "tuesday", "wednesday", "thursday", "friday" :
+      theFmt.Println("Weekday")
+    default:
+      theFmt.Println("Invalid Input")
+  }
+}
+
 func main() {
 
-  theFmt.Println("--------Test A-------------")
-  TestA()
+  theFmt.Println("--------Tes if A-------------")
+  TestIfA()
   theFmt.Println()
-  theFmt.Println("--------Test B-------------")
-  TestB()
+  theFmt.Println("--------Test if B-------------")
+  TestIfB()
   theFmt.Println()
-  theFmt.Println("--------Test A2-------------")
-  TestA2()
+  theFmt.Println("--------Test Switch A-------------")
+  TestSwitchA()
   theFmt.Println()
-  theFmt.Println("--------Test C-------------")
-  TestC()
+  theFmt.Println("--------Test Switch B-------------")
+  TestSwitchB()
+  theFmt.Println()
+  theFmt.Println("--------Test Switch C-------------")
+  TestSwitchC()
 
-    
 }
