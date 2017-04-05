@@ -36,6 +36,27 @@ func TestB() {
   }
 }
 
+func TestC() {
+  var t interface{}
+  i := 10
+  t = &i
+ // t = 10 
+ // t = true
+ // t = "kaushik"
+  switch t := t.(type) {
+    default:
+      theFmt.Printf("unexpected type %T\n", t)     // %T prints whatever type t has
+    case bool:
+      theFmt.Printf("boolean %t\n", t)             // t has type bool
+    case int:
+      theFmt.Printf("integer %d\n", t)             // t has type int
+    case *bool:
+      theFmt.Printf("pointer to boolean %t\n", *t) // t has type *bool
+    case *int:
+      theFmt.Printf("pointer to integer %d\n", *t) // t has type *int
+  }
+}
+
 func main() {
 
   theFmt.Println("--------Test A-------------")
@@ -46,6 +67,9 @@ func main() {
   theFmt.Println()
   theFmt.Println("--------Test A2-------------")
   TestA2()
+  theFmt.Println()
+  theFmt.Println("--------Test C-------------")
+  TestC()
 
     
 }
