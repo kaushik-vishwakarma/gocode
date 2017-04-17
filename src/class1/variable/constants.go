@@ -19,6 +19,20 @@ const (
     YB
 )
 
+const (
+  c0 = iota
+  c1 = iota
+  c2 
+)
+
+const (
+  aa = 1 << iota  // a == 1 (iota has been reset)
+  ab //assignment is needed only for fist = 1 << iota  // b == 2
+  ac = 1 << iota  // c == 4
+  ad = 1 << iota
+  ae
+)
+
 func (b ByteSize) String() string {
     switch {
     case b >= YB:
@@ -65,5 +79,19 @@ func main() {
 
   var bb ByteSize = 45000
   fmt.Println("bb: ", bb)
+
+  fmt.Println("---------------------------")
+  fmt.Println()
+  fmt.Println("c0: ", c0 )
+  fmt.Println("c1: ", c1 )
+  fmt.Println("c2: ", c2 )
+
+  fmt.Println("---------------------------")
+  fmt.Println()
+  fmt.Println("a: ", aa, int(aa) )
+  fmt.Println("b: ", ab, int(ab) )
+  fmt.Println("c: ", ac, int(ac) )
+  fmt.Println("d: ", ad, int(ad) )
+  fmt.Println("e: ", ae, int(ae) )
     
 }
