@@ -2,6 +2,13 @@ package main
 
 import (
   "fmt"
+  "os"
+)
+
+var (
+    home   = os.Getenv("HOME")
+    user   = os.Getenv("USER")
+    gopath = os.Getenv("GOPATH")
 )
 
 func main() {
@@ -16,6 +23,12 @@ func main() {
   fmt.Printf("%T, %v\n", k, k)
   fmt.Printf("%T, %v\n", p, p)
   fmt.Printf("%T, %v\n", *p, *p)
+
+  fmt.Println()
+  fmt.Println()
+  fmt.Println("home:", home)
+  fmt.Println("user:", user)
+  fmt.Println("gopath:", gopath)
 
     
 }
